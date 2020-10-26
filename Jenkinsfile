@@ -20,12 +20,12 @@ podTemplate(label: 'builder',
         stage('Checkout') {
              checkout scm   // gitlab으로부터 소스 다운
         }
-        stage('Build') {
-            container('gradle') {
-                /* 도커 이미지를 활용하여 gradle 빌드를 수행하여 ./build/libs에 jar파일 생성 */
-                sh "gradle -x test build"
-            }
-        }
+//        stage('Build') {
+ //           container('gradle') {
+  //              /* 도커 이미지를 활용하여 gradle 빌드를 수행하여 ./build/libs에 jar파일 생성 */
+   //             sh "gradle -x test build"
+ //           }
+//        }
         stage('Docker build') {
             container('docker') {
                 withCredentials([usernamePassword(
