@@ -66,7 +66,6 @@ podTemplate(label: 'builder',
 
                         /* yaml파일로 배포를 수행한다 */
                         sh "kubectl apply -f ./kubernetes/deployment.yaml -n ${NAMESPACE}"
-                        sh "kubectl apply -f ./kubernetes/deployment.yaml -n ${NAMESPACE}"
                 }
             }
         }
