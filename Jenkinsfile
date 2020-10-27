@@ -59,7 +59,7 @@ podTemplate(label: 'builder',
                             -n ${NAMESPACE}
                         """
                         /* k8s-deployment.yaml 의 env값을 수정해준다(DATE로). 배포시 수정을 해주지 않으면 변경된 내용이 정상 배포되지 않는다. */
-                        /*sh "echo ${VERSION}"
+                         /*sh "echo ${VERSION}"
                         sh "sed -i.bak 's#VERSION_STRING#${VERSION}#' ./kubernetes/deployment.yaml"*/
                         sh "echo ${DATE}"
                         sh "sed -i.bak 's#DATE_STRING#${DATE}#' ./kubernetes/deployment.yaml"
