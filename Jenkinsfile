@@ -55,7 +55,7 @@ podTemplate(label: 'builder',
                             --docker-server=https://index.docker.io/v1/ \
                             --docker-username=${USERNAME} \
                             --docker-password=${PASSWORD} \
-                            --docker-email=ekfrl2815@gmail.com \
+                            --docker-email=chano22@naver.com \
                             -n ${NAMESPACE}
                         """
                         /* k8s-deployment.yaml 의 env값을 수정해준다(DATE로). 배포시 수정을 해주지 않으면 변경된 내용이 정상 배포되지 않는다. */
@@ -65,8 +65,8 @@ podTemplate(label: 'builder',
                         sh "sed -i.bak 's#DATE_STRING#${DATE}#' ./kubernetes/deployment.yaml"
 
                         /* yaml파일로 배포를 수행한다 */
-                        sh "kubectl apply -f ./kubernetes/deployment -n ${NAMESPACE}"
-                        sh "kubectl apply -f ./kubernetes/deployment -n ${NAMESPACE}"
+                        sh "kubectl apply -f ./kubernetes/deployment.yaml -n ${NAMESPACE}"
+                        sh "kubectl apply -f ./kubernetes/deployment.yaml -n ${NAMESPACE}"
                 }
             }
         }
